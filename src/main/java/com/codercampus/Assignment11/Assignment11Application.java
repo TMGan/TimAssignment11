@@ -12,3 +12,4 @@ public class Assignment11Application {
 		SpringApplication.run(Assignment11Application.class, args);
 	}
 }
+//left off with trying to get the funds out table displaying the right stuff. Right now its only displaying in the funds in table.
