@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Transaction Details</title>
+  <link rel="stylesheet" href="/css/transactions.css"/>
+</head>
+<body>
+<h1>Online Bank</h1>
+<div th:if="${transaction != null}">
+  <h2 th:text="'Transaction ID: ' + ${transaction.id} + ' (' + (transaction.type == 'D' ? 'Debit' : 'Credit') + ')'"></h2>
+  <p style="margin: 0; padding: 0;"><strong>Date:</strong> <span th:text="${transaction.date}"></span></p>
+  <p style="margin: 0; padding: 0;"><strong>Amount:</strong> <span th:text="${transaction.amount}"></span></p>
+  <p style="margin: 0; padding: 0;"><strong>Description:</strong> <span th:text="${transaction.retailer}"></span></p>
+  <a href="/transactions" style="margin-right: 2em;">back</a>
+</div>
+<div th:if="${transaction == null}">
+  <p>Transaction not found.</p>
+  <a href="/transactions" style="margin-right: 2em;">back</a>
+</div>
+</body>
+</html>
