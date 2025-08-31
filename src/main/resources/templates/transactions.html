@@ -18,12 +18,12 @@
 
 			<tr th:each="transaction : ${transactions}">
 				<td>
-					<a th:href="@{'/transactions/' + ${transaction.id}}" th:text="${transaction.id}"></a>
+					<a th:href="@{'/transactions/' + ${transaction.id}}" th:text="${transaction.id}"Transaction ID></a>
 				</td>
 				<td th:text="${transaction.date}"></td>
 				<td th:text="${transaction.retailer}"></td>
-				<td th:text="${transaction.type != null and transaction.type == 'C' and transaction.amount != null ? transaction.amount : ''}"></td>
-				<td th:text="${transaction.type != null and transaction.type == 'D' and transaction.amount != null ? transaction.amount : ''}"></td>
+				<td th:text="${transaction.type == 'D'  ? '' : transaction.amount}"></td>
+				<td th:text="${transaction.type == 'C'  ? '' : transaction.amount}"></td>
 			</tr>
 		</table>
 
